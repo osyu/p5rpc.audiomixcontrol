@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Deterministic>true</Deterministic>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ReloadedILLink>true</ReloadedILLink>
+    <Version>1.0.0</Version>
+    <Authors>ugng</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ReloadedLinkRoots Include="p5rpc.audiomixcontrol" />
+    <ReloadedLinkAssemblies Include="Reloaded.Memory" />
+  </ItemGroup>
+
+  <Import Project="Reloaded.Trimming.targets" />
+
+  <ItemGroup>
+    <Content Include="ModConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Update="Icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.3.0" ExcludeAssets="runtime" />
+    <PackageReference Include="Reloaded.SharedLib.Hooks" Version="1.9.0" ExcludeAssets="runtime" />
+    <PackageReference Include="Reloaded.Memory" Version="8.0.1" />
+    <PackageReference Include="Reloaded.Memory.SigScan.ReloadedII.Interfaces" ExcludeAssets="runtime" Version="1.2.0" />
+  </ItemGroup>
+
+</Project>
